@@ -3,13 +3,15 @@
 @section('content')
     <div class="container">
         <div class="p-5 bg-body-tertiary rounded-3">
-            <h1 class="text-body-emphasis">Total : {{ $events->count() }} évènements !</h1>
-            <hr>
             @if($events->isEmpty())
+                <h1 class="text-body-emphasis">Aucun évènement !</h1>
+                <hr>
                 <p>
-                    Vous n'avez aucun évènement pour le moment !!!
+                    Liste vide. Veuillez créer des évènements pour les afficher !
                 </p>
             @else
+                <h1 class="text-body-emphasis">Total : {{ $events->count() }} {{ Str::plural('évènement', $events->count()) }} !</h1>
+                <hr>
                 @foreach($events as $event)
                     <div class="mt-4">
                         <p class="col-lg-8 fs-5">

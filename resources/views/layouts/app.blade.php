@@ -11,8 +11,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
-    <main>
-        @include('partials.nav')
+
+    @include('partials.nav')
+
+    <main class="my-3">
 
         @if(Session::has('notification.message'))
             <div class="container alert alert-{{ Session::get('notification.type') }}" role="alert">
@@ -21,9 +23,18 @@
         @endif
 
         <div class="container">
-            @yield('content')
-            @include('partials.footer')
+            <div class="p-5 bg-body-tertiary rounded-3">
+
+                @yield('content')
+
+            </div>
         </div>
+
     </main>
+
+    @yield('paginate')
+
+    @include('partials.footer')
+
 </body>
 </html>

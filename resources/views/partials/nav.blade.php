@@ -1,4 +1,4 @@
-<nav class="navbar bg-body-tertiary mb-3">
+<nav class="p-4 navbar bg-body-tertiary mb-3">
     <div class="container">
         <a href="{{ route('events.index') }}" class="navbar-brand">{{ config('app.name') }}</a>
             @if(! Route::is('events.create'))
